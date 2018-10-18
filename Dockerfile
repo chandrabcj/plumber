@@ -1,5 +1,5 @@
 FROM bhisecj/rplumber
-MAINTAINER Jeff Allen <docker@trestletech.com>
+MAINTAINER Chandra <chandubhise99@gmail.com>
 
 RUN apt-get update -qq && apt-get install -y \
   git-core \
