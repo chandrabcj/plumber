@@ -1,13 +1,13 @@
 version: '2'
 services:
   append: 
-    image: trestletech/plumber
+    image: bhisecj/plumber
     command: '/examples/01-append/appender.R'
     volumes:
      - ../examples:/examples
     restart: always
   filters: 
-    image: trestletech/plumber
+    image: bhisecj/plumber
     command: '/examples/02-filters/filters.R'
     volumes:
      - ../examples:/examples
