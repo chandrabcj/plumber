@@ -1,4 +1,4 @@
-FROM rocker/r-base
+FROM bhisecj/rplumber
 MAINTAINER Jeff Allen <docker@trestletech.com>
 
 RUN apt-get update -qq && apt-get install -y \
