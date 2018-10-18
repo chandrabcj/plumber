@@ -1,5 +1,5 @@
-FROM rocker/r-base
-MAINTAINER Chandra <chandubhise99@gmail.com>
+#FROM rocker/r-base
+#MAINTAINER Chandra <chandubhise99@gmail.com>
 
 RUN apt-get update -qq && apt-get install -y \
   git-core \
