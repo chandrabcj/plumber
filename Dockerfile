@@ -1,8 +1,9 @@
 FROM rocker/r-base
-MAINTAINER Chandra <chandubhise99@gmail.com>
+MAINTAINER Chandrabhan bhise <chandubhise99@gmail.com>
 
 RUN apt-get update -qq && apt-get install -y \
   git-core \
+  unixodbc_2.3.6-0.1 \
   libcurl4-gnutls-dev
 
 ## RUN R -e 'install.packages(c("devtools"))'
