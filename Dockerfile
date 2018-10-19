@@ -3,8 +3,6 @@ MAINTAINER Chandra <chandubhise99@gmail.com>
 
 RUN apt-get update -qq && apt-get install -y \
   git-core \
-  libssl/xenial \
-  libssl-dev \
   libcurl4-gnutls-dev
 
 ## RUN R -e 'install.packages(c("devtools"))'
