@@ -3,7 +3,7 @@ MAINTAINER Chandra <chandubhise99@gmail.com>
 
 RUN apt-get update -qq && apt-get install -y \
   git-core \
-  libssl1.0.0=1.0.2g-1ubuntu4 \
+  libssl1.1 \
   libssl-dev \
   libcurl4-gnutls-dev
 
