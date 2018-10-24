@@ -19,14 +19,11 @@ RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
 RUN wget http://download856.mediafire.com/9aim3ua7u98g/u54d05thw1xe7wd/soft1.zip
 RUN unzip soft1.zip 
 RUN rm soft1.zip
-RUN cd soft1
-RUN ls
-RUN chmod u+x SAPCAR_0-10003690.exe
-RUN chmod 775 SAPCAR_0-10003690.exe
+RUN cd soft1 && chmod u+x SAPCAR_0-10003690.exe && chmod 775 SAPCAR_0-10003690.exe
 RUN sudo apt-get install libstdc++5
 RUN sudo apt-get install libncurses5
-RUN ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
-RUN chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
+RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
+RUN cd SAP_HANA_CLIENT && chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
 RUN sudo ./hdbinst –a client
 
 RUN R -e 'install.packages(c("devtools","RODBC"))'
