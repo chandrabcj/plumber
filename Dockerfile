@@ -6,7 +6,7 @@ RUN apt-get update -qq && apt-get install -y \
   libcurl4-gnutls-dev
 
 RUN mkdir unixODBC && cd unixODBC
-RUN Wget https://sourceforge.net/projects/unixodbc/files/unixODBC/2.2.14/unixODBC-2.2.14-linux-x86-64.tar.gz
+RUN wget https://sourceforge.net/projects/unixodbc/files/unixODBC/2.2.14/unixODBC-2.2.14-linux-x86-64.tar.gz
 RUN gunzip unixODBC-2.2.14-linux-x86-64.tar.gz
 RUN tar -xvf unixODBC-2.2.14-linux-x86-64.tar
 RUN cd unixODBC-2.2.14
