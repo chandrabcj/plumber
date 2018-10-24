@@ -24,7 +24,7 @@ RUN su - && apt-get install sudo -y && usermod -aG sudo root
 RUN sudo apt-get install libstdc++5
 #RUN sudo apt-get install libncurses5
 #RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
-#RUN rm soft1/SAP_HANA_CLIENT
+RUN rm soft1/IMDB_CLIENT20_003_123-8000208.SAR
 RUN useradd -M sapadm
 RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
 RUN cd soft1/SAP_HANA_CLIENT && chmod 775 hdbinst && chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
