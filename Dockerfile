@@ -18,7 +18,8 @@ RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
 
 RUN wget http://download856.mediafire.com/9aim3ua7u98g/u54d05thw1xe7wd/soft1.zip
 RUN unzip soft1.zip 
-RUN cd soft1/
+RUN rm soft1.zip
+RUN cd soft1
 RUN ls
 RUN chmod u+x SAPCAR_0-10003690.exe
 RUN chmod 775 SAPCAR_0-10003690.exe
