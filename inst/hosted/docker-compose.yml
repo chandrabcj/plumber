@@ -18,7 +18,7 @@ services:
      - ../examples:/examples
     restart: always
   sessions:
-    build: ../examples/06-sessions/
+    build: ../examples/04-mean-sum/
     volumes:
      - ../examples:/examples
     restart: always
