@@ -28,7 +28,7 @@ RUN sudo apt-get install libstdc++5
 RUN useradd -M sapadm
 RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
 RUN cd soft1/SAP_HANA_CLIENT && chmod 775 hdbinst && chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
-RUN cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client
+RUN -i cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client
 
 RUN R -e 'install.packages(c("devtools","RODBC"))'
 ## RUN R -e 'devtools::install_github("trestletech/plumber")'
