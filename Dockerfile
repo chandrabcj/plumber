@@ -9,7 +9,7 @@ RUN mkdir unixODBC && cd unixODBC
 RUN wget https://sourceforge.net/projects/unixodbc/files/unixODBC/2.2.14/unixODBC-2.2.14-linux-x86-64.tar.gz
 RUN gunzip unixODBC-2.2.14-linux-x86-64.tar.gz
 RUN tar -xvf unixODBC-2.2.14-linux-x86-64.tar
-#RUN cd unixODBC-2.2.14-linux-x86-64
+RUN cd unixODBC
 RUN ls
 
 RUN R -e 'install.packages(c("devtools","RODBC"))'
