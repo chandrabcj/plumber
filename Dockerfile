@@ -4,6 +4,10 @@ MAINTAINER Chandrabhan bhise <chandubhise99@gmail.com>
 RUN apt-get update -qq && apt-get install -y \
   git-core \
   libcurl4-gnutls-dev
+ 
+RUN Wget https://sourceforge.net/projects/unixodbc/files/unixODBC/2.2.14/unixODBC-2.2.14-linux-x86-64.tar.gz
+
+
 
 RUN R -e 'install.packages(c("devtools","RODBC"))'
 ## RUN R -e 'devtools::install_github("trestletech/plumber")'
