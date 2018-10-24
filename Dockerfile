@@ -32,7 +32,7 @@ RUN cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client -p /
 RUN sudo echo "[HDB] DRIVER=/usr/sap/hdbclient/libodbcHDB.so SERVERNODE=10.253.133.184:30065 DATABASENAME=mdca61030" >> ~/.odbc.ini
 
 
-RUN R -e 'install.packages(c("devtools","RODBC"))'
+RUN R -e 'install.packages(c("RODBC"))'
 ## RUN R -e 'devtools::install_github("trestletech/plumber")'
 RUN install2.r plumber
 
