@@ -1,7 +1,7 @@
 #* @get /mean
-normalMean <- function(samples=10){
+normalMean <- function(samples=100){
   data <- rnorm(samples)
-  mean(10,20,30)
+  mean(100,200,300)
 }
 
 #* @get /connect
