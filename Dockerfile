@@ -16,6 +16,15 @@ RUN export PATH=$PATH:/unixODBC/usr/local/bin
 RUN export ODBCINI=$HOME/.odbc.ini
 RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
 
+RUN wget
+RUN unzip 
+RUN cd soft1
+RUN chmod 775 SAPCAR_0-10003690.exe
+RUN chmod u+x SAPCAR_0-10003690.exe
+RUN sudo apt-get install libstdc++5
+RUN ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
+RUN RUN chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
+
 
 RUN R -e 'install.packages(c("devtools","RODBC"))'
 ## RUN R -e 'devtools::install_github("trestletech/plumber")'
