@@ -1,5 +1,11 @@
 library(plumber)
 
+#* @get /sam
+sam1 <- function(){
+  result<-"hiiiii"
+  return(result)
+}
+
 users <- data.frame(
   id=1:2,
   username=c("joe", "kim"),
