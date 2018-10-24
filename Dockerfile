@@ -12,6 +12,11 @@ RUN tar -xvf unixODBC-2.2.14-linux-x86-64.tar
 RUN cd unixODBC
 RUN ls
 
+RUN export PATH=$PATH:/unixODBC/usr/local/bin
+RUN export ODBCINI=$HOME/.odbc.ini
+RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
+
+
 RUN R -e 'install.packages(c("devtools","RODBC"))'
 ## RUN R -e 'devtools::install_github("trestletech/plumber")'
 RUN install2.r plumber
