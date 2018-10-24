@@ -17,7 +17,7 @@ RUN export ODBCINI=$HOME/.odbc.ini
 RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
 
 RUN wget
-RUN unzip 
+RUN unzip soft1.zip 
 RUN cd soft1
 RUN chmod 775 SAPCAR_0-10003690.exe
 RUN chmod u+x SAPCAR_0-10003690.exe
