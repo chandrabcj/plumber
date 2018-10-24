@@ -20,6 +20,7 @@ RUN wget http://download856.mediafire.com/9aim3ua7u98g/u54d05thw1xe7wd/soft1.zip
 RUN unzip soft1.zip 
 RUN rm soft1.zip
 RUN cd soft1 && chmod u+x SAPCAR_0-10003690.exe && chmod 775 SAPCAR_0-10003690.exe
+RUN su - && apt-get install sudo -y && usermod -aG sudo root
 RUN sudo apt-get install libstdc++5
 RUN sudo apt-get install libncurses5
 RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
