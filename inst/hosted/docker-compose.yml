@@ -27,6 +27,11 @@ services:
     volumes:
      - ../examples:/examples
     restart: always
+  connect:
+    build: ../examples/07-connect/
+    volumes:
+     - ../examples:/examples
+    restart: always
   nginx:
     image: nginx:1.9
     ports:
@@ -38,5 +43,6 @@ services:
      - append
      - sessions
      - mailgun
+     - connect
      - filters
      - github

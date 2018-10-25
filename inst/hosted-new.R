@@ -24,5 +24,8 @@ do_deploy_api(drop, "sessions", "./inst/examples/06-sessions/", 8006,
 install_package_secure(drop, "htmltools")
 do_deploy_api(drop, "mailgun", "./inst/examples/07-mailgun/", 8007)
 
+#connect
+do_deploy_api(drop, "connect", "./inst/examples/00-connect/", 8008)
+
 # MANUAL: configure DNS, then
 # do_configure_https(drop, "plumber.tres.tl"... )
