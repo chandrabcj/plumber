@@ -8,7 +8,7 @@ RUN apt-get update -qq && apt-get install -y \
 RUN mkdir unixODBC
 RUN wget https://sourceforge.net/projects/unixodbc/files/unixODBC/2.2.14/unixODBC-2.2.14-linux-x86-64.tar.gz
 RUN gunzip unixODBC-2.2.14-linux-x86-64.tar.gz
-ADD unixODBC-2.2.14-linux-x86-64.tar unixODBC/
+ADD unixODBC-2.2.14-linux-x86-64.tar /unixODBC/
 RUN cd unixODBC && tar -xvf unixODBC-2.2.14-linux-x86-64.tar 
 RUN cd unixODBC && rm unixODBC-2.2.14-linux-x86-64.tar
 
