@@ -10,7 +10,7 @@ RUN wget https://sourceforge.net/projects/unixodbc/files/unixODBC/2.2.14/unixODB
 RUN gunzip unixODBC-2.2.14-linux-x86-64.tar.gz
 RUN tar -xvf unixODBC-2.2.14-linux-x86-64.tar
 RUN cd unixODBC
-RUN ls
+RUN rm unixODBC-2.2.14-linux-x86-64.tar
 
 RUN export PATH=$PATH:/unixODBC/usr/local/bin
 RUN export ODBCINI=$HOME/.odbc.ini
