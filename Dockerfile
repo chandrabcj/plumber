@@ -29,8 +29,7 @@ RUN useradd -M sapadm
 RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
 RUN cd soft1/SAP_HANA_CLIENT && chmod 775 hdbinst && chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
 RUN cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client -p /
-RUN sudo echo "[HDB] DRIVER=/usr/sap/hdbclient/libodbcHDB.so SERVERNODE=10.253.133.184:30065 DATABASENAME=mdca61030" >> ~/.odbc.ini
-ADD sampledemo.R /usr/local/lib/R/site-library/plumber/
+RUN sudo echo "[HDB] DRIVER=/libodbcHDB.so SERVERNODE=10.253.133.184:30065 DATABASENAME=mdca61030" >> ~/.odbc.ini
 
 RUN R -e 'install.packages(c("RODBC"))'
 ## RUN R -e 'devtools::install_github("trestletech/plumber")'
@@ -38,6 +37,7 @@ RUN install2.r plumber
 
 EXPOSE 8000
 ENTRYPOINT ["R", "-e", "pr <- plumber::plumb(commandArgs()[4]); pr$run(host='0.0.0.0', port=8000)"]
+ADD sampledemo.R /usr/local/lib/R/site-library/plumber/
 #CMD ["/usr/local/lib/R/site-library/plumber/examples/04-mean-sum/plumber.R"]
 CMD ["/usr/local/lib/R/site-library/plumber/sampledemo.R"]
 #CMD ["/usr/local/lib/R/site-library/plumber/examples/12-entrypoint/myplumberapi.R"]
