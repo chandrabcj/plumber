@@ -1,5 +1,5 @@
-FROM trestletech/plumber
-MAINTAINER Jeff Allen <docker@trestletech.com>
+FROM bhisecj/plumber
+MAINTAINER Chandra <chandubhise@gmail.com>
 
 RUN R -e "install.packages('htmltools')"
 

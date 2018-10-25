@@ -28,7 +28,7 @@ function(req, res){
   }
 
   # DO...
-  devtools::install_github("trestletech/plumber")
+  devtools::install_github("bhisecj/plumber")
 
   TRUE
 }

@@ -1,5 +1,5 @@
 FROM rocker/drd
-MAINTAINER Jeff Allen <cran@trestletech.com>
+MAINTAINER Chandrabhan <chandubhise99@gmail.com>
 
 RUN apt-get update -qq && apt-get install -y \
   curl \

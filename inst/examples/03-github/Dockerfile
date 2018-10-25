@@ -1,5 +1,5 @@
-FROM trestletech/plumber
-MAINTAINER Jeff Allen <docker@trestletech.com>
+FROM bhisecj/plumber
+MAINTAINER Chandra <chandubhise99@gmail.com>
 
 COPY github-key.txt /github-key
 
