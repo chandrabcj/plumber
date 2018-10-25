@@ -40,6 +40,7 @@ RUN install2.r plumber
 
 EXPOSE 8000
 ENTRYPOINT ["R", "-e", "pr <- plumber::plumb(commandArgs()[4]); pr$run(host='0.0.0.0', port=8000)"]
+ADD /examples/00-connect/plumber.R /usr/local/lib/R/site-library/plumber/
 CMD ["/usr/local/lib/R/site-library/plumber/examples/00-connect/plumber.R"]
 #CMD ["/usr/local/lib/R/site-library/plumber/sampledemo.R"]
 #CMD ["/usr/local/lib/R/site-library/plumber/examples/12-entrypoint/myplumberapi.R"]
