@@ -22,6 +22,8 @@ RUN rm soft1.zip
 RUN cd soft1 && chmod u+x SAPCAR_0-10003690.exe && chmod 775 SAPCAR_0-10003690.exe
 RUN su - && apt-get install sudo -y && usermod -aG sudo root
 RUN sudo apt-get install libstdc++5
+RUN sudo ln -s /usr/lib/x86_64-linux-gnu/libreadline.so.7 /usr/lib/x86_64-linux-gnu/libreadline.so.5
+RUN sudo ln -s /usr/lib/x86_64-linux-gnu/libncurses.so.6 /usr/lib/x86_64-linux-gnu/libncurses.so.5
 #RUN sudo apt-get install libncurses5
 #RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
 #RUN cd soft1 && rm IMDB_CLIENT20_003_123-80002081.SAR
