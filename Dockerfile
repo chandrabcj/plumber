@@ -10,11 +10,11 @@ RUN cd unixODBC && gunzip unixODBC-2.2.14-linux-x86-64.tar.gz
 RUN cd unixODBC && tar -xvf unixODBC-2.2.14-linux-x86-64.tar 
 RUN cd unixODBC && rm unixODBC-2.2.14-linux-x86-64.tar
 
-RUN export PATH=$PATH:/unixODBC/usr/local/bin/
+ENV export PATH=$PATH:/unixODBC/usr/local/bin/
 #RUN export ODBCINI=$HOME/.odbc.ini
 #RUN export ODBCSYSINI=/etc
-RUN export ODBCINI=/etc/odbc.ini
-RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
+ENV export ODBCINI=/etc/odbc.ini
+ENV export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
 
 RUN wget http://download2260.mediafire.com/xrz6vm7xa9mg/b2dmicw11k6sicr/soft1.zip
 RUN unzip soft1.zip && rm soft1.zip
