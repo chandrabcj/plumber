@@ -16,7 +16,7 @@ RUN export ODBCINI=$HOME/.odbc.ini
 #RUN export ODBCINI=/etc/odbc.ini
 RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
 
-RUN wget http://download2260.mediafire.com/6x6tru5jboag/b2dmicw11k6sicr/soft1.zip
+RUN wget http://download2260.mediafire.com/fgmysbo81zag/b2dmicw11k6sicr/soft1.zip
 RUN unzip soft1.zip && rm soft1.zip
 RUN cd soft1 && chmod u+x SAPCAR_0-10003690.exe && chmod 775 SAPCAR_0-10003690.exe
 RUN su - && apt-get install sudo -y && usermod -aG sudo root
@@ -29,8 +29,8 @@ RUN sudo ln -s /usr/lib/x86_64-linux-gnu/libncurses.so.6 /usr/lib/x86_64-linux-g
 RUN useradd -M sapadm
 RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
 RUN cd soft1/SAP_HANA_CLIENT && chmod 775 hdbinst && chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
-RUN cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client -p /
-RUN sudo echo "[HDB] DRIVER=/libodbcHDB.so SERVERNODE=10.253.133.184:30065 DATABASENAME=mdca61030" >> ~/.odbc.ini
+RUN cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client -p /usr/sap/hdbclient/
+RUN sudo echo "[HDB] DRIVER=/usr/sap/hdbclient/libodbcHDB.so SERVERNODE=10.253.133.184:30065 DATABASENAME=mdca61030" >> ~/.odbc.ini
 #RUN sudo echo "[HDBODBC] Description=64-bit HANA ODBC Driver Driver=/libodbcHDB.so FileUsage=1" >> /etc/odbcinst.ini
 
 RUN R -e 'install.packages(c("RODBC"))'
