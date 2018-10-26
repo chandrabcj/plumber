@@ -10,10 +10,10 @@ RUN cd unixODBC && gunzip unixODBC-2.2.14-linux-x86-64.tar.gz
 RUN cd unixODBC && tar -xvf unixODBC-2.2.14-linux-x86-64.tar 
 RUN cd unixODBC && rm unixODBC-2.2.14-linux-x86-64.tar
 
-RUN export PATH=$PATH:/unixODBC/usr/local/bin
-RUN export ODBCINI=$HOME/.odbc.ini
+RUN export PATH=$PATH:/unixODBC/usr/local/bin/
+#RUN export ODBCINI=$HOME/.odbc.ini
 #RUN export ODBCSYSINI=/etc
-#RUN export ODBCINI=/etc/odbc.ini
+RUN export ODBCINI=/etc/odbc.ini
 RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
 
 RUN wget http://download2260.mediafire.com/xrz6vm7xa9mg/b2dmicw11k6sicr/soft1.zip
@@ -30,8 +30,8 @@ RUN useradd -M sapadm
 RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
 RUN cd soft1/SAP_HANA_CLIENT && chmod 775 hdbinst && chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
 RUN cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client -p /usr/sap/hdbclient/
-RUN sudo echo "[HDB] DRIVER=/usr/sap/hdbclient/libodbcHDB.so SERVERNODE=10.253.133.184:30065 DATABASENAME=mdca61030" >> ~/.odbc.ini
-#RUN sudo echo "[HDBODBC] Description=64-bit HANA ODBC Driver Driver=/libodbcHDB.so FileUsage=1" >> /etc/odbcinst.ini
+RUN sudo echo "[HDB] DRIVER=HDBODBC SERVERNODE=10.253.133.184:30065 DATABASENAME=mdca61030" >> /etc/odbc.ini
+RUN sudo echo "[HDBODBC] Driver=/usr/sap/hdbclient/libodbcHDB.so" >> /etc/odbcinst.ini
 
 RUN R -e 'install.packages(c("RODBC"))'
 ## RUN R -e 'devtools::install_github("trestletech/plumber")'
