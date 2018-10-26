@@ -5,10 +5,12 @@ RUN apt-get update -qq && apt-get install -y \
   git-core \
   libcurl4-gnutls-dev
 
-RUN mkdir unixODBC && cd unixODBC && wget https://sourceforge.net/projects/unixodbc/files/unixODBC/2.2.14/unixODBC-2.2.14-linux-x86-64.tar.gz
-RUN cd unixODBC && gunzip unixODBC-2.2.14-linux-x86-64.tar.gz
-RUN cd unixODBC && tar -xvf unixODBC-2.2.14-linux-x86-64.tar 
-RUN cd unixODBC && rm unixODBC-2.2.14-linux-x86-64.tar
+RUN mkdir unixODBC && cd unixODBC
+RUN wget https://sourceforge.net/projects/unixodbc/files/unixODBC/2.2.14/unixODBC-2.2.14-linux-x86-64.tar.gz
+RUN gunzip unixODBC-2.2.14-linux-x86-64.tar.gz
+RUN tar -xvf unixODBC-2.2.14-linux-x86-64.tar
+RUN cd unixODBC
+RUN rm unixODBC-2.2.14-linux-x86-64.tar
 
 ENV export PATH=$PATH:/unixODBC/usr/local/bin/
 #RUN export ODBCINI=$HOME/.odbc.ini
