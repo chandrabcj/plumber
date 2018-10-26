@@ -34,7 +34,7 @@ RUN cd soft1/SAP_HANA_CLIENT && chmod 775 hdbinst && chmod +x hdbinst hdbsetup h
 RUN cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client -p /usr/sap/hdbclient/
 RUN sudo echo -e "[HDB] \nDRIVER=HDBODBC \nSERVERNODE=10.253.133.184:30065 \nDATABASENAME=mdca61030" >> ~/.odbc.ini
 RUN sudo echo -e "[HDB] \nDRIVER=HDBODBC \nSERVERNODE=10.253.133.184:30065 \nDATABASENAME=mdca61030" >> /etc/odbc.ini
-RUN sudo echo -e"[HDBODBC] \nDriver=/usr/sap/hdbclient/libodbcHDB.so" >> /etc/odbcinst.ini
+RUN sudo echo -e "[HDBODBC] \nDriver=/usr/sap/hdbclient/libodbcHDB.so" >> /etc/odbcinst.ini
 
 RUN R -e 'install.packages(c("RODBC"))'
 ## RUN R -e 'devtools::install_github("trestletech/plumber")'
