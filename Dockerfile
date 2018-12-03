@@ -32,8 +32,8 @@ RUN useradd -M sapadm
 RUN cd soft1 && ./SAPCAR_0-10003690.exe -xvf ./IMDB_CLIENT20_003_123-80002082.SAR
 RUN cd soft1/SAP_HANA_CLIENT && chmod 775 hdbinst && chmod +x hdbinst hdbsetup hdbuninst instruntime/sdbrun
 RUN cd soft1/SAP_HANA_CLIENT && sudo ./hdbinst -a client -p /usr/sap/hdbclient/
-RUN sudo echo -e "[HDB] \nDRIVER=HDBODBC \nSERVERNODE=10.253.93.93:30041 \nDATABASENAME=ZSCHEMA" >> ~/.odbc.ini
-RUN sudo echo -e "[HDB] \nDRIVER=HDBODBC \nSERVERNODE=10.253.93.93:30041 \nDATABASENAME=ZSCHEMA" >> /etc/odbc.ini
+RUN sudo echo -e "[HDB] \nDRIVER=HDBODBC \nSERVERNODE=10.253.93.93:30041 \nDATABASENAME=saphdi" >> ~/.odbc.ini
+RUN sudo echo -e "[HDB] \nDRIVER=HDBODBC \nSERVERNODE=10.253.93.93:30041 \nDATABASENAME=saphdi" >> /etc/odbc.ini
 RUN sudo echo -e "[HDBODBC] \nDriver=/usr/sap/hdbclient/libodbcHDB.so" >> /etc/odbcinst.ini
 
 RUN R -e 'install.packages(c("RODBC"))'
