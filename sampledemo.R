@@ -15,7 +15,7 @@ normalMean <- function(){
 #* @get /connect
 hdbconnection <- function(){
   
-  install.packages('RODBC')
+  #install.packages('RODBC')
   library('RODBC')
   dbconnection <- odbcDriverConnect("Driver=HDBODBC;
                 Server=10.253.93.93; Port=30041; Database=saphdi; 
