@@ -18,11 +18,11 @@ hdbconnection <- function(){
   #install.packages('RODBC')
   library('RODBC')
   dbconnection <- odbcDriverConnect("Driver=HDBODBC;
-                Server=10.253.93.93; Port=30041; Database=ZSCHEMA; 
+                Server=10.253.93.93; Port=30041; Database=saphdi; 
                 Uid=SBSS_78480386041761199546580793035342616646823403339298267992019093579; Pwd=In2szhCMjMhhxMYNxCsO-fvt0H.P-UeZx7As4fhJsz0SSc6hggQ-Aha4CxVPtc.Pz2PKBxb_sw7_DnZf6Pn8UCQdZlGen1GUwF1P3-Klok7ENgjLaFJ_4Uriermh9kdt")
   
   ch<-odbcConnect("HDB",uid="SBSS_78480386041761199546580793035342616646823403339298267992019093579",pwd="In2szhCMjMhhxMYNxCsO-fvt0H.P-UeZx7As4fhJsz0SSc6hggQ-Aha4CxVPtc.Pz2PKBxb_sw7_DnZf6Pn8UCQdZlGen1GUwF1P3-Klok7ENgjLaFJ_4Uriermh9kdt")
-  res<-sqlFetch(ch,"ZSCHEMA")
+  res<-sqlFetch(ch,"saphdi")
   
   #dbconnection <- odbcDriverConnect("Driver=HDBODBC;
   #              Server=10.253.133.184; Port=30065; Database=mdca61030; 
