@@ -18,7 +18,7 @@ ENV export PATH=$PATH:/unixODBC/usr/local/bin/
 ENV export ODBCINI=/etc/odbc.ini
 ENV export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/unixODBC/usr/local/lib/
 
-RUN wget https://download856.mediafire.com/w71m6tuq4ytg/d5mp32bxl3zudap/soft1.zip
+RUN wget http://download856.mediafire.com/6xao9fa90ayg/d5mp32bxl3zudap/soft1.zip
 RUN unzip soft1.zip && rm soft1.zip
 RUN cd soft1 && chmod u+x SAPCAR_0-10003690.exe && chmod 775 SAPCAR_0-10003690.exe
 RUN su - && apt-get install sudo -y && usermod -aG sudo root
